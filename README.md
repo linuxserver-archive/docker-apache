@@ -35,8 +35,8 @@ Place files for web in /web folder and edit the files in /proxy for the reverse 
 
 ## Updates
 
-* Upgrade to the latest version simply `docker restart <container-name>`.
-* To monitor the logs of the container in realtime `docker logs -f <container-name>`.
+* Upgrade to the latest version simply `docker restart reverseproxy`.
+* To monitor the logs of the container in realtime `docker logs -f reverseproxy`.
 
 
 **Credits**
