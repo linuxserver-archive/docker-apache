@@ -17,7 +17,7 @@ RUN \
   
 #Volumes and Ports
 EXPOSE 80 443
-VOLUME ["/config", "/web", "/logs"]
+VOLUME ["/config", "/web"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
