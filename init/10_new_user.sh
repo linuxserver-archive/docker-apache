@@ -2,7 +2,7 @@
 
 if [ ! "$(id -u abc)" -eq "$PUID" ]; then usermod -o -u "$PUID" abc ; fi
 if [ ! "$(id -g abc)" -eq "$PGID" ]; then groupmod -o -g "$PGID" abc ; fi
-chown abc:abc -R /etc/apache2/
+chown abc:abc -R /etc/apache2/sites-available/
 chown abc:abc -R /var/www/
 
 echo "
