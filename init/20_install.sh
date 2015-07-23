@@ -3,14 +3,6 @@
 # Enable proxy
 a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
 service apache2 restart
-rm -R -f /var/www
-ln -s /web /var/www
-
-# Update apache configuration with this one
-mv /etc/apache2/sites-available/000-default.conf /etc/apache2/000-default.conf
-rm /etc/apache2/sites-available/*
-rm /etc/apache2/apache2.conf
-ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf
 
 #move in default files
 cp /defaults/apache2.conf /etc/apache2/apache2.conf
