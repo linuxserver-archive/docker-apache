@@ -17,7 +17,7 @@ RUN \
   
 #Volumes and Ports
 EXPOSE 80 443
-VOLUME ["/etc/apache2/", "/var/www"]
+VOLUME ["/etc/apache2/sites-available/", "/var/www"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
