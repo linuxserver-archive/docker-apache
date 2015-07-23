@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ ! -e /usr/sbin/apche2 ]; then 
-	echo "Installed"
+if [ ! -e /usr/sbin/apache2 ]; then 
+	echo "Not Installed"
 else
   apt-get update
   apt-get upgrade
