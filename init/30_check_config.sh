@@ -6,4 +6,5 @@ if [ -f /config/proxy-config.conf ]; then
 else
   echo "Creating config from template."
   mv /etc/apache2/000-default.conf /config/proxy-config.conf
+  chown abc:abc /config/proxy-config.conf
 fi
