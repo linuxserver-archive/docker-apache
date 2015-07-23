@@ -6,4 +6,5 @@ if [ -f /etc/apache2/sites-available/000-default.conf ]; then
 else
   echo "Creating config from template."
   mv /defaults/000-default.conf /etc/apache2/sites-available/000-default.conf
+  chown abc:abc /etc/apache2/sites-available/000-default.conf
 fi
