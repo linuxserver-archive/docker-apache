@@ -16,7 +16,7 @@ docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/www:/var/www -v /pa
 
 * `-p 80, 443` - the port(s)
 * `-v /etc/localhost` for timesync - *optional*
-* `-v /etc/apache2/` - Location for reverse proxy files
+* `-v /etc/apache2/sites-available/` - Location for reverse proxy files
 * `-v /var/www/` - Location for files to be served by webserver
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
