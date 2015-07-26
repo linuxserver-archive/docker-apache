@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 RUN echo abc > /etc/container_environment/APACHE_RUN_USER
 RUN echo abc > /etc/container_environment/APACHE_RUN_GROUP
