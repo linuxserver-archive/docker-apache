@@ -34,7 +34,7 @@ VOLUME ["/etc/apache2/sites-available/", "/var/www"]
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-ADD defaults/ /defaults/
+ADD defaults/000-default.conf /defaults/000-default.conf
 ADD defaults/apache2.conf /etc/apache2/apache2.conf
 ADD defaults/ports.conf /etc/apache2/ports.conf
 RUN chmod -v +x /etc/service/*/run
