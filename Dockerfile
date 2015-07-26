@@ -1,7 +1,15 @@
 FROM phusion/baseimage:0.9.16
 MAINTAINER smdion <me@seandion.com>
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
-ENV DEBIAN_FRONTEND=noninteractive HOME=/root TERM=screen APACHE_RUN_USER=abc APACHE_RUN_GROUP=abc APACHE_LOG_DIR=/var/log/apache2 APACHE_LOCK_DIR=/var/lock/apache2 APACHE_PID_FILE=/var/run/apache2.pid APACHE_RUN_DIR=/var/run/apache2
+ENV DEBIAN_FRONTEND noninteractive 
+ENV HOME /root 
+ENV TERM screen 
+ENV APACHE_RUN_USER abc 
+ENV APACHE_RUN_GROUP abc 
+ENV APACHE_LOG_DIR /var/log/apache2 
+ENV APACHE_LOCK_DIR /var/lock/apache2 
+ENV APACHE_PID_FILE /var/run/apache2.pid 
+ENV APACHE_RUN_DIR /var/run/apache2
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
