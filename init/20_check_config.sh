@@ -7,5 +7,4 @@ else
   echo "Creating config from template."
   mv /defaults/000-default.conf /etc/apache2/sites-available/000-default.conf
   chown abc:abc /etc/apache2/sites-available/000-default.conf
-  service apache2 restart
 fi
