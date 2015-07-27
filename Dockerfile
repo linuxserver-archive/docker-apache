@@ -14,6 +14,10 @@ ENV APACHE_RUN_DIR /var/run/apache2
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
+#Adduser
+RUN useradd -u 911 -U -s /bin/false abc
+RUN usermod -G users abc
+
 # Install Dependencies
 RUN \
   apt-get update -q && \
@@ -31,13 +35,8 @@ VOLUME ["/etc/apache2/sites-available/", "/var/www"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
 ADD defaults/000-default.conf /defaults/000-default.conf
 ADD defaults/apache2.conf /etc/apache2/apache2.conf
 ADD defaults/ports.conf /etc/apache2/ports.conf
-RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
  
-#Adduser
-RUN useradd -u 911 -U -s /bin/false abc
-RUN usermod -G users abc
