@@ -29,7 +29,7 @@ ADD services/ /etc/service/
 ADD defaults/000-default.conf /defaults/000-default.conf
 ADD defaults/apache2.conf /etc/apache2/apache2.conf
 ADD defaults/ports.conf /etc/apache2/ports.conf
-ADD defaults/envvars /etc/apache2/envars
+ADD defaults/envvars /etc/apache2/envvars
 RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
  
