@@ -18,7 +18,7 @@ RUN service apache2 restart
 
 #Volumes and Ports
 EXPOSE 80 443
-VOLUME ["/etc/apache2/sites-available/", "/var/www"]
+VOLUME ["/config/apache2/", "/config/www/"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/

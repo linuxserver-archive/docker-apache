@@ -1,8 +1,8 @@
 #!/bin/sh
 
-while /sbin/setuser abc inotifywait -e modify /etc/apache2/sites-available/; do
+while /sbin/setuser abc inotifywait -e modify /config/apache2/; do
   sv down /etc/service/reverseproxy/
   sv up /etc/service/reverseproxy/
   echo "File in Config Folder Changed, Restarted"
-  
+
 done
