@@ -12,6 +12,10 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
+# Enable proxy
+RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
+RUN service apache2 restart
+
 # Update apache configuration with this one
 RUN \
   rm /etc/apache2/sites-available/* && \
@@ -19,10 +23,6 @@ RUN \
   ln -s /var/log/apache2 /logs && \
   rm -R -f /var/www && \
   ln -s /web /var/www
-
-# Enable proxy
-RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
-RUN service apache2 restart
 
 #Volumes and Ports
 EXPOSE 80 443
