@@ -16,7 +16,7 @@ RUN \
 RUN \
   rm /etc/apache2/sites-available/* && \
   ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
-  ln -s /var/log/apache2 /logs
+  ln -s /var/log/apache2 /logs && \
   rm -R -f /var/www && \
   ln -s /web /var/www
 
