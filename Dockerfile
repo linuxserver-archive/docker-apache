@@ -12,13 +12,23 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
+# Update apache configuration with this one
+RUN \
+  mv /etc/apache2/sites-available/000-default.conf /etc/apache2/000-default.conf && \
+  rm /etc/apache2/sites-available/* && \
+  rm /etc/apache2/apache2.conf && \
+  ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
+  ln -s /var/log/apache2 /logs
+  rm -R -f /var/www && \
+  ln -s /web /var/www
+
 # Enable proxy
 RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
 RUN service apache2 restart
 
 #Volumes and Ports
 EXPOSE 80 443
-VOLUME ["/config/apache2/", "/config/www/"]
+VOLUME ["/config", "/web", "/logs"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
