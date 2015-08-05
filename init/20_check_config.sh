@@ -8,3 +8,12 @@ else
   mv /defaults/000-default.conf /config/proxy-config.conf
   chown abc:abc /config/proxy-config.conf
 fi
+
+# Check if logs folder exists. If not, create
+if [ -d /config/logs ]; then
+  echo "Folder Exists."
+else
+  echo "Creating."
+  /sbin/setuser abc mkdir -p /config/logs
+fi
+  
