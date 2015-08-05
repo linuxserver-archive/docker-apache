@@ -1,4 +1,4 @@
 #!/bin/bash
 
-exec /sbin/setuser abc tail -F /var/log/apache2/error.log
+exec /sbin/setuser abc tail -F /config/logs/error.log
 
