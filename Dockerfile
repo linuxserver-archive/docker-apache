@@ -19,13 +19,12 @@ RUN service apache2 restart
 RUN \
   rm /etc/apache2/sites-available/* && \
   ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
-  ln -s /var/log/apache2 /config/logs && \
   rm -R -f /var/www && \
   ln -s /config/web /var/www
 
 #Volumes and Ports
 EXPOSE 80 443
-VOLUME ["/config", "/web", "/logs"]
+VOLUME ["/config"]
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
