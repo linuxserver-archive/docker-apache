@@ -18,10 +18,10 @@ else
 fi
 
 # Check if www folder exists. If not, create
-if [ -d /config/web ]; then
+if [ -d /config/www ]; then
   echo "Folder directory exists."
 else
   echo "Creating web directory."
-  /sbin/setuser abc mkdir -p /config/web
+  /sbin/setuser abc mkdir -p /config/www
 fi
    
