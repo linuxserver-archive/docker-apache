@@ -20,7 +20,7 @@ RUN \
   rm /etc/apache2/sites-available/* && \
   ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
   rm -R -f /var/www && \
-  ln -s /config/web /var/www
+  ln -s /config/www /var/www
 
 #Volumes and Ports
 EXPOSE 80 443
