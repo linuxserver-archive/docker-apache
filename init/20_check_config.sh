@@ -11,9 +11,17 @@ fi
 
 # Check if logs folder exists. If not, create
 if [ -d /config/logs ]; then
-  echo "Folder Exists."
+  echo "Folder directory."
 else
-  echo "Creating."
+  echo "Creating log directory."
   /sbin/setuser abc mkdir -p /config/logs
 fi
-  
+
+# Check if www folder exists. If not, create
+if [ -d /config/web ]; then
+  echo "Folder directory."
+else
+  echo "Creating web directory."
+  /sbin/setuser abc mkdir -p /config/web
+fi
+   
