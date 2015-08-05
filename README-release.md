@@ -9,7 +9,7 @@ Apache reverse proxy is a webserver.  This docker is setup for easy use of the r
 ## Usage
 
 ```
-docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/www:/var/www -v /path/to/proxy:/etc/apache2/ linuxserver/Reverseproxy
+docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/Reverseproxy
 ```
 
 **Parameters**
