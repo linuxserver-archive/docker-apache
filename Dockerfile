@@ -13,13 +13,6 @@ RUN \
 # Enable apache mods for proxy
 RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
 
-# Update apache configuration with this one
-RUN \
-  rm /etc/apache2/sites-available/* && \
-  ln -s /config/proxy-config.conf /etc/apache2/sites-available/000-default.conf && \
-  rm -R -f /var/www && \
-  ln -s /config/www /var/www
-
 #Volumes and Ports
 EXPOSE 80 443
 VOLUME ["/config"]
