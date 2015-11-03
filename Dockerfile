@@ -1,4 +1,4 @@
-FROM linuxserver/baseimage-apache
+FROM linuxserver/baseimage.apache
 MAINTAINER smdion <me@seandion.com>
 
 ENV APTLIST="libapache2-mod-php5 wget inotify-tools php5-gd php5-sqlite php5-mcrypt php5-tidy php5-mysql libapache2-mod-proxy-html"
