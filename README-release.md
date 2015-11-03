@@ -15,7 +15,6 @@ docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linu
 **Parameters**
 
 * `-p 80, 443` - the port(s)
-* `-v /etc/localhost` for timesync - *optional*
 * `-v /config/` - Location for reverse proxy files. Contains log and www-root folder
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
