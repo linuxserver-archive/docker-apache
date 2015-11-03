@@ -10,9 +10,8 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
-# Enable proxy
+# Enable apache mods for proxy
 RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html ssl xml2enc 
-RUN service apache2 restart
 
 # Update apache configuration with this one
 RUN \
