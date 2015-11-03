@@ -1,13 +1,12 @@
-FROM linuxserver/baseimage
+FROM linuxserver/baseimage.apache
 MAINTAINER smdion <me@seandion.com>
 
-# Use baseimage-docker's init system
-CMD ["/sbin/my_init"]
+ENV APTLIST="libapache2-mod-php5 wget inotify-tools php5-gd php5-sqlite php5-mcrypt php5-tidy php5-mysql libapache2-mod-proxy-html"
 
 # Install Dependencies
 RUN \
   apt-get update -q && \
-  apt-get install -qy apache2 php5 libapache2-mod-php5 wget inotify-tools php5-gd php5-sqlite php5-mcrypt php5-tidy php5-cli php5-mysql libapache2-mod-proxy-html && \
+  apt-get install -qy $APTLIST && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
