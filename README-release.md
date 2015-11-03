@@ -29,9 +29,9 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-Config files are located in /config/apache
-Place web files in /config/www
-Place keys in /config/keys
+* Config files are located in /config/apache
+* Place web files in /config/www
+* Place keys in /config/keys
 
 ## Updates
 
