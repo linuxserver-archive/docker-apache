@@ -2,14 +2,14 @@
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
-# linuxserver/ReverseProxy
+# linuxserver/reverseproxy
 
 Apache reverse proxy is a webserver.  This docker is setup for easy use of the reverse proxy feature of Apache which allows you to redirect traffic.  For example instead of going to www.domain.com:8351 for a service, you can go direct to www.domain.com/service and also enable HTTPS.
 
 ## Usage
 
 ```
-docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/Reverseproxy
+docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/reverseproxy
 ```
 
 **Parameters**
@@ -29,7 +29,9 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-Place files for web in /web folder and edit the files in /proxy for the reverse proxy.
+Config files are located in /config/apache
+Place web files in /config/www
+Place keys in /config/keys
 
 ## Updates
 
