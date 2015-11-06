@@ -2,14 +2,14 @@
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
-# linuxserver/reverseproxy
+# linuxserver/apache-reverseproxy
 
 Apache reverse proxy is a webserver.  This docker is setup for easy use of the reverse proxy feature of Apache which allows you to redirect traffic.  For example instead of going to www.domain.com:8351 for a service, you can go direct to www.domain.com/service and also enable HTTPS.
 
 ## Usage
 
 ```
-docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/reverseproxy
+docker create --name="apache-reverseproxy" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/apache-reverseproxy
 ```
 
 **Parameters**
@@ -19,7 +19,7 @@ docker create --name="Proxy" -p 80:80 -p 443:443 -v /path/to/config:/config linu
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it Proxy /bin/bash`.
+It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it apache-reverseproxy /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -35,14 +35,10 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Updates
 
-* Upgrade to the latest version simply `docker restart reverseproxy`.
-* To monitor the logs of the container in realtime `docker logs -f reverseproxy`.
+* Upgrade to the latest version simply `docker restart apache-reverseproxy`.
+* To monitor the logs of the container in realtime `docker logs -f apache-reverseproxy`.
 
-
-**Credits**
-
-* smdion <smdion@gmail.com>
 
 **Versions**
 
-* 1.0
+* 06-11-2015 - Initial Release
