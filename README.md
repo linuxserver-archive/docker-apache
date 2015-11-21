@@ -2,14 +2,14 @@
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
-# linuxserver/apacheweb
+# linuxserver/apache
 
 This is an apache web server docker with reverse proxy services enabled.  Reverse proxy gives the ability going to www.domain.com:8351 for a service, you can go direct to www.domain.com/service and also enable HTTPS.
 
 ## Usage
 
 ```
-docker create --name="apacheweb" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/apacheweb
+docker create --name="apache" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/apache
 ```
 
 **Parameters**
@@ -19,7 +19,7 @@ docker create --name="apacheweb" -p 80:80 -p 443:443 -v /path/to/config:/config 
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it apache-reverseproxy /bin/bash`.
+It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it apache /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -35,8 +35,8 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Updates
 
-* Upgrade to the latest version simply `docker restart apacheweb`.
-* To monitor the logs of the container in realtime `docker logs -f apacheweb`.
+* Upgrade to the latest version simply `docker restart apache`.
+* To monitor the logs of the container in realtime `docker logs -f apache`.
 
 
 **Versions**
