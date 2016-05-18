@@ -16,7 +16,7 @@ ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run /etc/service/*/finish /etc/my_init.d/*.sh
 
 # Update apache configuration with this one
-RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html xml2enc
+RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html xml2enc authnz_ldap
   
 # ports and volumes
 EXPOSE 80 443
