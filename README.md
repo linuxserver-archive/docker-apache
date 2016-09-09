@@ -22,7 +22,11 @@ This is an apache web server docker with reverse proxy services enabled.  Revers
 ## Usage
 
 ```
-docker create --name="apache" -p 80:80 -p 443:443 -v /path/to/config:/config linuxserver/apache
+docker create \
+--name="apache" \
+-p 80:80 -p 443:443 \
+-v /path/to/config:/config \
+linuxserver/apache
 ```
 
 **Parameters**
@@ -36,9 +40,14 @@ It is based on phusion-baseimage with ssh removed, for shell access whilst the c
 
 ### User / Group Identifiers
 
-**TL;DR** - The `PGID` and `PUID` values set the user / group you'd like your container to 'run as' to the host OS. This can be a user you've created or even root (not recommended).
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
 
-Part of what makes our containers work so well is by allowing you to specify your own `PUID` and `PGID`. This avoids nasty permissions errors with relation to data volumes (`-v` flags). When an application is installed on the host OS it is normally added to the common group called users, Docker apps due to the nature of the technology can't be added to this group. So we added this feature to let you easily choose when running your containers.
+In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as below:
+
+```
+  $ id <dockeruser>
+    uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
+```
 
 ## Setting up the application 
 
