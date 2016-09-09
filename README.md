@@ -1,10 +1,23 @@
-![https://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
+[linuxserverurl]: https://linuxserver.io
+[forumurl]: https://forum.linuxserver.io
+[ircurl]: https://www.linuxserver.io/index.php/irc/
+[podcasturl]: https://www.linuxserver.io/index.php/category/podcast/
 
-The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
+[![linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)][linuxserverurl]
+
+The [LinuxServer.io][linuxserverurl] team brings you another container release featuring easy user mapping and community support. Find us for support at:
+* [forum.linuxserver.io][forumurl]
+* [IRC][ircurl] on freenode at `#linuxserver.io`
+* [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/apache
+[![](https://images.microbadger.com/badges/image/linuxserver/apache.svg)](http://microbadger.com/images/linuxserver/apache "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/apache.svg)](http://microbadger.com/images/linuxserver/apache "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/apache.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/apache.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-nzbapache)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-nzbapache/)
+[hub]: https://hub.docker.com/r/linuxserver/apache/
 
 This is an apache web server docker with reverse proxy services enabled.  Reverse proxy gives the ability going to www.domain.com:8351 for a service, you can go direct to www.domain.com/service and also enable HTTPS.
+
+[![apache](http://www.softaculous.com/website/images/ampps/apache.png)][apacheurl]
+[apacheurl]: https://httpd.apache.org/
 
 ## Usage
 
@@ -41,4 +54,5 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 **Versions**
 
-* 06-11-2015 - Initial Release
+* 09-09-16 - Add layer badges to README.
+* 06-11-15 - Initial Release
