@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/apache
-[![](https://images.microbadger.com/badges/image/linuxserver/apache.svg)](http://microbadger.com/images/linuxserver/apache "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/apache.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/apache.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-apache)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-apache/)
+[![](https://images.microbadger.com/badges/version/linuxserver/apache.svg)](https://microbadger.com/images/linuxserver/apache "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/apache.svg)](http://microbadger.com/images/linuxserver/apache "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/apache.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/apache.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-apache)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-apache/)
 [hub]: https://hub.docker.com/r/linuxserver/apache/
 
 This is an apache web server docker with reverse proxy services enabled.  Reverse proxy gives the ability going to www.domain.com:8351 for a service, you can go direct to www.domain.com/service and also enable HTTPS.
@@ -55,13 +55,21 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 * Place web files in /config/www
 * Place keys in /config/keys
 
-## Updates
+## Info
 
-* Upgrade to the latest version simply `docker restart apache`.
 * To monitor the logs of the container in realtime `docker logs -f apache`.
+
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' apache`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/apache`
 
 
 **Versions**
 
-* 09-09-16 - Add layer badges to README.
-* 06-11-15 - Initial Release
++ **14-10-16:** Add version layer information.
++ **09-09-16:** Add layer badges to README.
++ **06-11-15:** Initial Release
