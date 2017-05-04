@@ -1,5 +1,5 @@
 FROM linuxserver/baseimage.apache
-MAINTAINER smdion <me@seandion.com>
+MAINTAINER smdion <me@seandion.com> blah test
 
 # set version label
 ARG BUILD_DATE
