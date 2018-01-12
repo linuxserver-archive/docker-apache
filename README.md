@@ -23,10 +23,11 @@ This is an apache web server docker with reverse proxy services enabled.  Revers
 
 ```
 docker create \
---name="apache" \
--p 80:80 -p 443:443 \
--v /path/to/config:/config \
-linuxserver/apache
+  --name="apache" \
+    -v /path/to/config:/config \
+    -e PGID=<gid> -e PUID=<uid>  \
+    -p 80:80 -p 443:443 \
+  linuxserver/apache
 ```
 
 ## Parameters
