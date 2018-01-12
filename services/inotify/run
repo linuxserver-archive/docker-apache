@@ -1,8 +1,9 @@
 #!/bin/sh
 
-while /sbin/setuser abc inotifywait -e modify /config/apache/site-confs/default.conf; do
-  sv down /etc/service/web/
-  sv up /etc/service/web/
-  echo "Default.conf changed, restarting"
-
+/sbin/setuser abc inotifywait -m -r -e modify /config/apache --format %w%f | while read file; do
+  if [ "${file##*.}" = "conf" ]; then
+    sv down /etc/service/web/
+    sv up /etc/service/web
+    echo "$file changed, restarting"
+  fi
 done
